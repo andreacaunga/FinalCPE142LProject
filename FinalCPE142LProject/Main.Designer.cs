@@ -146,8 +146,9 @@
             btnSignout.Name = "btnSignout";
             btnSignout.Size = new Size(190, 45);
             btnSignout.TabIndex = 5;
-            btnSignout.Text = "SIGN OUT   ";
+            btnSignout.Text = "   SIGN OUT   ";
             btnSignout.TextAlign = ContentAlignment.MiddleRight;
+            btnSignout.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSignout.UseVisualStyleBackColor = true;
             // 
             // btnExit
@@ -163,8 +164,9 @@
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(190, 45);
             btnExit.TabIndex = 4;
-            btnExit.Text = "EXIT   ";
+            btnExit.Text = "   EXIT   ";
             btnExit.TextAlign = ContentAlignment.MiddleRight;
+            btnExit.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnExit.UseVisualStyleBackColor = true;
             // 
             // btnHome

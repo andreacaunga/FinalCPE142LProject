@@ -39,6 +39,7 @@
             btnExit = new Button();
             btnDashboard = new Button();
             pnlContainerAdmin = new Panel();
+            guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             pnlAdminMenu.SuspendLayout();
             SuspendLayout();
             // 
@@ -145,8 +146,9 @@
             btnSignout.Name = "btnSignout";
             btnSignout.Size = new Size(190, 45);
             btnSignout.TabIndex = 5;
-            btnSignout.Text = "SIGN OUT   ";
+            btnSignout.Text = "   SIGN OUT   ";
             btnSignout.TextAlign = ContentAlignment.MiddleRight;
+            btnSignout.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSignout.UseVisualStyleBackColor = true;
             // 
             // btnExit
@@ -162,8 +164,9 @@
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(190, 45);
             btnExit.TabIndex = 4;
-            btnExit.Text = "EXIT   ";
+            btnExit.Text = "   EXIT   ";
             btnExit.TextAlign = ContentAlignment.MiddleRight;
+            btnExit.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnExit.UseVisualStyleBackColor = true;
             // 
             // btnDashboard
@@ -190,6 +193,21 @@
             pnlContainerAdmin.Name = "pnlContainerAdmin";
             pnlContainerAdmin.Size = new Size(780, 625);
             pnlContainerAdmin.TabIndex = 1;
+            // 
+            // guna2ContextMenuStrip1
+            // 
+            guna2ContextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            guna2ContextMenuStrip1.Name = "guna2ContextMenuStrip1";
+            guna2ContextMenuStrip1.RenderStyle.ArrowColor = Color.FromArgb(151, 143, 255);
+            guna2ContextMenuStrip1.RenderStyle.BorderColor = Color.Gainsboro;
+            guna2ContextMenuStrip1.RenderStyle.ColorTable = null;
+            guna2ContextMenuStrip1.RenderStyle.RoundedEdges = true;
+            guna2ContextMenuStrip1.RenderStyle.SelectionArrowColor = Color.White;
+            guna2ContextMenuStrip1.RenderStyle.SelectionBackColor = Color.FromArgb(100, 88, 255);
+            guna2ContextMenuStrip1.RenderStyle.SelectionForeColor = Color.White;
+            guna2ContextMenuStrip1.RenderStyle.SeparatorColor = Color.Gainsboro;
+            guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            guna2ContextMenuStrip1.Size = new Size(211, 32);
             // 
             // Admin
             // 
@@ -220,5 +238,6 @@
         private Button btnAccounts;
         private Panel panel1;
         private Panel pnlContainerAdmin;
+        private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
     }
 }
