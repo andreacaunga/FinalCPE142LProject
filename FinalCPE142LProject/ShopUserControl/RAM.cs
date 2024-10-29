@@ -8,20 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FinalCPE142LProject
+namespace FinalCPE142LProject.ShopUserControl
 {
-    public partial class Signup : Form
+    public partial class RAM : UserControl
     {
-        public Signup()
+        public RAM()
         {
             InitializeComponent();
-        }
-
-        private void lblLogin_Click(object sender, EventArgs e)
-        {
-            Login frmLogin = new Login();
-            frmLogin.Show();
-            this.Hide();
         }
     }
 }

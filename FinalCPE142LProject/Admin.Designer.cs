@@ -150,6 +150,7 @@
             btnSignout.TextAlign = ContentAlignment.MiddleRight;
             btnSignout.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSignout.UseVisualStyleBackColor = true;
+            btnSignout.Click += btnSignout_Click;
             // 
             // btnExit
             // 
@@ -168,6 +169,7 @@
             btnExit.TextAlign = ContentAlignment.MiddleRight;
             btnExit.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // btnDashboard
             // 
@@ -207,7 +209,7 @@
             guna2ContextMenuStrip1.RenderStyle.SelectionForeColor = Color.White;
             guna2ContextMenuStrip1.RenderStyle.SeparatorColor = Color.Gainsboro;
             guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            guna2ContextMenuStrip1.Size = new Size(211, 32);
+            guna2ContextMenuStrip1.Size = new Size(61, 4);
             // 
             // Admin
             // 
@@ -218,6 +220,7 @@
             Controls.Add(pnlContainerAdmin);
             Controls.Add(pnlAdminMenu);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
             Name = "Admin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin";

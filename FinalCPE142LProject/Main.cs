@@ -13,6 +13,9 @@ namespace FinalCPE142LProject
 {
     public partial class Main : Form
     {
+        bool sidebarExpand;
+        bool shopCollapse;
+
         Home home = new Home();
         Shop shop = new Shop();
         Cart cart = new Cart();
@@ -37,7 +40,8 @@ namespace FinalCPE142LProject
 
         private void btnShop_Click(object sender, EventArgs e)
         {
-            addUserControl(shop);
+            //addUserControl(shop);
+            shopTimer.Start();
         }
 
         private void btnCart_Click(object sender, EventArgs e)
@@ -48,6 +52,68 @@ namespace FinalCPE142LProject
         private void btnMyAccount_Click(object sender, EventArgs e)
         {
             addUserControl(userInfo);
+        }
+
+        private void btnSignout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Start start = new Start();
+            start.ShowDialog();
+            this.Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private void sidebarTimer_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                sidebar.Width -= 10;
+                if (sidebar.Width == sidebar.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    sidebarTimer.Stop();
+                }
+            }
+            else
+            {
+                sidebar.Width += 10;
+                if (sidebar.Width == sidebar.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    sidebarTimer.Stop();
+                }
+            }
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            sidebarTimer.Start();
+        }
+
+        private void shopTimer_Tick(object sender, EventArgs e)
+        {
+            if (shopCollapse)
+            {
+                shopContainer.Height += 10;
+                if (shopContainer.Height == shopContainer.MaximumSize.Height)
+                {
+                    shopCollapse = false;
+                    shopTimer.Stop();
+                }
+            }
+            else
+            {
+                shopContainer.Height -= 10;
+                if (shopContainer.Height == shopContainer.MinimumSize.Height)
+                {
+                    shopCollapse = true;
+                    shopTimer.Stop();
+                }
+            }
         }
     }
 }

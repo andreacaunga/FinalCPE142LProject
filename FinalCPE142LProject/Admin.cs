@@ -55,6 +55,19 @@ namespace FinalCPE142LProject
             addUserControl(transactions);
         }
 
+        private void btnSignout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Start start = new Start();
+            start.ShowDialog();
+            this.Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
         /*
         public void ReadUsers()
         {
