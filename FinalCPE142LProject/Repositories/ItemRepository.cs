@@ -8,14 +8,13 @@ using System.Threading.Tasks;
 
 namespace FinalCPE142LProject.Repositories
 {
-    public class UserRepository
+    public class ItemRepository
     {
-        // CHANGE
         private readonly string connectionString = "Data Source=ASUS\\SQLEXPRESS;Initial Catalog=dboExample;User ID=sa;Password=123;Encrypt=True;Trust Server Certificate=True";
 
-        public List<User> ReadUsers()
+        public List<Item> ReadItems()
         {
-            var users = new List<User>();
+            var items = new List<Item>();
 
             try
             {
@@ -23,8 +22,7 @@ namespace FinalCPE142LProject.Repositories
                 {
                     connection.Open();
 
-                    // change this
-                    string query = "SELECT * FROM [dboExample].[dbo].[tblUser]";
+                    string query = "SELECT * [dboExample].[dbo].[tblItem2]";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -32,14 +30,14 @@ namespace FinalCPE142LProject.Repositories
                         {
                             while (reader.Read())
                             {
-                                User user = new User();
-                                user.userID = reader.GetInt32(0);
-                                user.firstName = reader.GetString(1);
-                                user.lastName = reader.GetString(2);
-                                user.userName = reader.GetString(3);
-                                user.pass = reader.GetString(4);
+                                Item item = new Item();
+                                item.itemID = reader.GetInt32(0);
+                                item.itemCategory = reader.GetString(1);
+                                item.itemQuantity = reader.GetInt32(2);
+                                item.itemName = reader.GetString(3);
+                                item.itemPrice = reader.GetFloat(4);
 
-                                users.Add(user);
+                                items.Add(item);
                             }
                         }
                     }
@@ -49,10 +47,9 @@ namespace FinalCPE142LProject.Repositories
             {
                 Console.WriteLine(ex.ToString());
             }
-            return users;
+            return items;
         }
-
-        public void createUser(User user)
+        public void createItem(Item item)
         {
             try
             {
@@ -60,16 +57,16 @@ namespace FinalCPE142LProject.Repositories
                 {
                     connection.Open();
 
-                    string query = "INSERT INTO [dboExample].[dbo].[tblUser]" + 
-                            " (first_name, last_name, username, password) VALUES " +
-                            "(@first_name, @last_name, @username, @password)";
+                    string query = "INSERT INTO [dboExample].[dbo].[tblItem2]" +
+                            " (item_category, quantity, item_name, item_price) VALUES " +
+                            "(@item_category, @quantity, @item_name, @item_price)";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@first_name", user.firstName);
-                        command.Parameters.AddWithValue("@last_name", user.lastName);
-                        command.Parameters.AddWithValue("@username", user.userName);
-                        command.Parameters.AddWithValue("@password", user.pass);
+                        command.Parameters.AddWithValue("@item_category", item.itemCategory);
+                        command.Parameters.AddWithValue("@quantity", item.itemQuantity);
+                        command.Parameters.AddWithValue("@item_name", item.itemName);
+                        command.Parameters.AddWithValue("@item_price", item.itemPrice);
 
                         command.ExecuteNonQuery();
                     }

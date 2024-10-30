@@ -215,6 +215,7 @@
             btnMBoard.TextAlign = ContentAlignment.MiddleLeft;
             btnMBoard.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnMBoard.UseVisualStyleBackColor = false;
+            btnMBoard.Click += btnMBoard_Click;
             // 
             // btnRAM
             // 
@@ -233,6 +234,7 @@
             btnRAM.TextAlign = ContentAlignment.MiddleLeft;
             btnRAM.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRAM.UseVisualStyleBackColor = false;
+            btnRAM.Click += btnRAM_Click;
             // 
             // btnGPU
             // 
@@ -251,6 +253,7 @@
             btnGPU.TextAlign = ContentAlignment.MiddleLeft;
             btnGPU.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnGPU.UseVisualStyleBackColor = false;
+            btnGPU.Click += btnGPU_Click;
             // 
             // btnCPU
             // 
@@ -269,6 +272,7 @@
             btnCPU.TextAlign = ContentAlignment.MiddleLeft;
             btnCPU.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCPU.UseVisualStyleBackColor = false;
+            btnCPU.Click += btnCPU_Click;
             // 
             // sidebar
             // 

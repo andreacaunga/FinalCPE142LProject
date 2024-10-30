@@ -1,6 +1,6 @@
 ﻿namespace FinalCPE142LProject
 {
-    partial class ProjectComponents
+    partial class ProjectComponent
     {
         /// <summary>
         /// Required designer variable.

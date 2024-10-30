@@ -1,4 +1,5 @@
 ﻿using FinalCPE142LProject.MainUserControl;
+using FinalCPE142LProject.ShopUserControl;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,12 @@ namespace FinalCPE142LProject
         Shop shop = new Shop();
         Cart cart = new Cart();
         UserInfo userInfo = new UserInfo();
+
+        // SHOP BUTTON
+        CPU CPU = new CPU();
+        GPU GPU = new GPU();
+        RAM RAM = new RAM();
+        MBoard mBoard = new MBoard();
         public Main()
         {
             InitializeComponent();
@@ -114,6 +121,26 @@ namespace FinalCPE142LProject
                     shopTimer.Stop();
                 }
             }
+        }
+
+        private void btnCPU_Click(object sender, EventArgs e)
+        {
+            addUserControl(CPU);
+        }
+
+        private void btnGPU_Click(object sender, EventArgs e)
+        {
+            addUserControl(GPU);
+        }
+
+        private void btnRAM_Click(object sender, EventArgs e)
+        {
+            addUserControl(RAM);
+        }
+
+        private void btnMBoard_Click(object sender, EventArgs e)
+        {
+            addUserControl(mBoard);
         }
     }
 }

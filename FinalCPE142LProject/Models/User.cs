@@ -8,7 +8,7 @@ namespace FinalCPE142LProject.Models
 {
     public class User
     {
-        public int id;
+        public int userID;
         public string firstName = "";
         public string lastName = "";
         public string userName = "";

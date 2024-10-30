@@ -36,7 +36,7 @@ namespace FinalCPE142LProject.AdminUserControl
             {
                 var row = dataTable.NewRow();
 
-                row["User ID"] = user.id;
+                row["User ID"] = user.userID;
                 row["First name"] = user.firstName;
                 row["Last name"] = user.lastName;
                 row["Username"] = user.userName;

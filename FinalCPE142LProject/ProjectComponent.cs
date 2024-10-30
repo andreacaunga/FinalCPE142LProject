@@ -1,5 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -9,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace FinalCPE142LProject
 {
-    public partial class ProjectComponents : Component
+    public partial class ProjectComponent : Component
     {
-        public ProjectComponents()
+        public ProjectComponent()
         {
             InitializeComponent();
         }
 
-        public ProjectComponents(IContainer container)
+        public ProjectComponent(IContainer container)
         {
             container.Add(this);
 
@@ -55,41 +54,18 @@ namespace FinalCPE142LProject
         class AdminAccount : UserAccount
         {
             private string role;
-            public AdminAccount(string firstName, string lastName, string role, string userName, string pasword) : base(firstName, lastName, userName, pasword)
+            public AdminAccount(string firstName, string lastName, string role, string userName, string password) : base(firstName, lastName, userName, password)
             {
-                this.role = "Admin";
+                this.role = role;
             }
             public override bool validateLogin(string userName, string password)
             {
-                if (userName == "admin" && password == "admin123")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return this.userName == "admin" && this.password =="admin123";
             }
             public string getRole()
             {
                 return role;
             }
-        }/*
-        class User : UserAccount
-        {
-            private string phone;
-            
-            public User(string firstName, string lastName, string phone, string userName, string password)
-            {
-                this.phone = phone;
-            }
-
-            public override bool validateLogin(string userName, string password)
-            {
-                if (userName && )
-            }
-            
         }
-            */
     }
 }

@@ -33,8 +33,8 @@
             btnUpdate = new Button();
             btnAdd = new Button();
             label4 = new Label();
-            dgvUser = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dgvUser).BeginInit();
+            dgvInventory = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
             SuspendLayout();
             // 
             // button4
@@ -96,36 +96,28 @@
             label4.TabIndex = 7;
             label4.Text = "Inventory";
             // 
-            // dgvUser
+            // dgvInventory
             // 
-            dgvUser.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvUser.BackgroundColor = Color.FromArgb(53, 59, 72);
-            dgvUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUser.GridColor = SystemColors.Desktop;
-            dgvUser.Location = new Point(41, 194);
-            dgvUser.MultiSelect = false;
-            dgvUser.Name = "dgvUser";
-            dgvUser.ReadOnly = true;
-            dgvUser.RowHeadersVisible = false;
-            dgvUser.RowHeadersWidth = 51;
-            dgvUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUser.Size = new Size(701, 338);
-            dgvUser.TabIndex = 23;
+            dgvInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvInventory.Location = new Point(192, 300);
+            dgvInventory.Name = "dgvInventory";
+            dgvInventory.RowHeadersWidth = 51;
+            dgvInventory.Size = new Size(300, 188);
+            dgvInventory.TabIndex = 11;
             // 
             // Inventory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 54, 64);
-            Controls.Add(dgvUser);
+            Controls.Add(dgvInventory);
             Controls.Add(button4);
             Controls.Add(btnUpdate);
             Controls.Add(btnAdd);
             Controls.Add(label4);
             Name = "Inventory";
             Size = new Size(780, 625);
-            ((System.ComponentModel.ISupportInitialize)dgvUser).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvInventory).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -135,6 +127,6 @@
         private Button btnUpdate;
         private Button btnAdd;
         private Label label4;
-        private DataGridView dgvUser;
+        private DataGridView dgvInventory;
     }
 }
