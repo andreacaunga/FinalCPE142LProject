@@ -37,7 +37,6 @@
             label4 = new Label();
             label2 = new Label();
             panel4 = new Panel();
-            vScrollBar1 = new VScrollBar();
             panel5 = new Panel();
             label5 = new Label();
             label6 = new Label();
@@ -46,6 +45,8 @@
             label7 = new Label();
             label8 = new Label();
             panel8 = new Panel();
+            guna2vScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
@@ -82,7 +83,7 @@
             panel3.Controls.Add(panel1);
             panel3.Location = new Point(48, 50);
             panel3.Name = "panel3";
-            panel3.Size = new Size(874, 140);
+            panel3.Size = new Size(824, 140);
             panel3.TabIndex = 2;
             // 
             // label3
@@ -141,14 +142,6 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(140, 140);
             panel4.TabIndex = 0;
-            // 
-            // vScrollBar1
-            // 
-            vScrollBar1.Dock = DockStyle.Right;
-            vScrollBar1.Location = new Point(944, 0);
-            vScrollBar1.Name = "vScrollBar1";
-            vScrollBar1.Size = new Size(26, 625);
-            vScrollBar1.TabIndex = 4;
             // 
             // panel5
             // 
@@ -240,16 +233,37 @@
             panel8.Size = new Size(140, 140);
             panel8.TabIndex = 0;
             // 
+            // guna2vScrollBar1
+            // 
+            guna2vScrollBar1.Dock = DockStyle.Right;
+            guna2vScrollBar1.InUpdate = false;
+            guna2vScrollBar1.LargeChange = 10;
+            guna2vScrollBar1.Location = new Point(948, 0);
+            guna2vScrollBar1.Name = "guna2vScrollBar1";
+            guna2vScrollBar1.ScrollbarSize = 22;
+            guna2vScrollBar1.Size = new Size(22, 625);
+            guna2vScrollBar1.TabIndex = 6;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Dock = DockStyle.Fill;
+            flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(970, 625);
+            flowLayoutPanel1.TabIndex = 7;
+            // 
             // CPU
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 54, 64);
+            Controls.Add(guna2vScrollBar1);
             Controls.Add(panel5);
             Controls.Add(panel7);
-            Controls.Add(vScrollBar1);
             Controls.Add(panel2);
             Controls.Add(panel3);
+            Controls.Add(flowLayoutPanel1);
             Name = "CPU";
             Size = new Size(970, 625);
             panel3.ResumeLayout(false);
@@ -272,7 +286,6 @@
         private Panel panel4;
         private Label label3;
         private Label label4;
-        private VScrollBar vScrollBar1;
         private Panel panel5;
         private Label label5;
         private Label label6;
@@ -281,5 +294,7 @@
         private Label label7;
         private Label label8;
         private Panel panel8;
+        private Guna.UI2.WinForms.Guna2VScrollBar guna2vScrollBar1;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

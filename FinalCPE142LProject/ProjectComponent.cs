@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -51,10 +52,10 @@ namespace FinalCPE142LProject
             }
         }
 
-        class AdminAccount : UserAccount
+        class AdminRole : UserAccount
         {
             private string role;
-            public AdminAccount(string firstName, string lastName, string role, string userName, string password) : base(firstName, lastName, userName, password)
+            public AdminRole(string firstName, string lastName, string role, string userName, string password) : base(firstName, lastName, userName, password)
             {
                 this.role = role;
             }

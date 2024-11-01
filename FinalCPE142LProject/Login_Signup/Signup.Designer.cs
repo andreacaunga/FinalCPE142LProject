@@ -43,6 +43,8 @@ namespace FinalCPE142LProject.Login_Signup
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Signup));
             txtFname = new Guna.UI2.WinForms.Guna2TextBox();
             txtLname = new Guna.UI2.WinForms.Guna2TextBox();
@@ -53,6 +55,7 @@ namespace FinalCPE142LProject.Login_Signup
             btnSignup = new Guna.UI2.WinForms.Guna2Button();
             label1 = new Label();
             lblLogin = new Label();
+            txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
             SuspendLayout();
             // 
             // txtFname
@@ -71,7 +74,7 @@ namespace FinalCPE142LProject.Login_Signup
             txtFname.Font = new Font("Square721 Cn BT", 10.2F);
             txtFname.ForeColor = Color.White;
             txtFname.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtFname.Location = new Point(95, 180);
+            txtFname.Location = new Point(95, 156);
             txtFname.Margin = new Padding(3, 4, 3, 4);
             txtFname.Name = "txtFname";
             txtFname.PasswordChar = '\0';
@@ -97,7 +100,7 @@ namespace FinalCPE142LProject.Login_Signup
             txtLname.Font = new Font("Square721 Cn BT", 10.2F);
             txtLname.ForeColor = Color.White;
             txtLname.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtLname.Location = new Point(95, 269);
+            txtLname.Location = new Point(95, 228);
             txtLname.Margin = new Padding(3, 4, 3, 4);
             txtLname.Name = "txtLname";
             txtLname.PasswordChar = '\0';
@@ -123,7 +126,7 @@ namespace FinalCPE142LProject.Login_Signup
             txtUser.Font = new Font("Square721 Cn BT", 10.2F);
             txtUser.ForeColor = Color.White;
             txtUser.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtUser.Location = new Point(95, 353);
+            txtUser.Location = new Point(95, 370);
             txtUser.Margin = new Padding(3, 4, 3, 4);
             txtUser.Name = "txtUser";
             txtUser.PasswordChar = '\0';
@@ -149,7 +152,7 @@ namespace FinalCPE142LProject.Login_Signup
             txtPhone.Font = new Font("Square721 Cn BT", 10.2F);
             txtPhone.ForeColor = Color.White;
             txtPhone.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPhone.Location = new Point(293, 353);
+            txtPhone.Location = new Point(293, 370);
             txtPhone.Margin = new Padding(3, 4, 3, 4);
             txtPhone.Name = "txtPhone";
             txtPhone.PasswordChar = '\0';
@@ -202,7 +205,7 @@ namespace FinalCPE142LProject.Login_Signup
             txtConPass.Font = new Font("Square721 Cn BT", 10.2F);
             txtConPass.ForeColor = Color.White;
             txtConPass.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtConPass.Location = new Point(293, 440);
+            txtConPass.Location = new Point(293, 441);
             txtConPass.Margin = new Padding(3, 4, 3, 4);
             txtConPass.Name = "txtConPass";
             txtConPass.PasswordChar = '\0';
@@ -224,7 +227,7 @@ namespace FinalCPE142LProject.Login_Signup
             btnSignup.FillColor = Color.FromArgb(41, 45, 53);
             btnSignup.Font = new Font("Square721 Cn BT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSignup.ForeColor = Color.White;
-            btnSignup.Location = new Point(95, 491);
+            btnSignup.Location = new Point(97, 508);
             btnSignup.Name = "btnSignup";
             btnSignup.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnSignup.Size = new Size(114, 37);
@@ -238,7 +241,7 @@ namespace FinalCPE142LProject.Login_Signup
             label1.BackColor = Color.FromArgb(47, 54, 64);
             label1.Font = new Font("Square721 Cn BT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(249, 500);
+            label1.Location = new Point(251, 517);
             label1.Name = "label1";
             label1.Size = new Size(143, 18);
             label1.TabIndex = 7;
@@ -251,19 +254,47 @@ namespace FinalCPE142LProject.Login_Signup
             lblLogin.Cursor = Cursors.Hand;
             lblLogin.Font = new Font("Square721 Cn BT", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLogin.ForeColor = SystemColors.ControlLightLight;
-            lblLogin.Location = new Point(389, 500);
+            lblLogin.Location = new Point(391, 517);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(39, 18);
             lblLogin.TabIndex = 8;
             lblLogin.Text = "Login";
             lblLogin.Click += lblLogin_Click_1;
             // 
+            // txtAddress
+            // 
+            txtAddress.BackColor = Color.FromArgb(47, 54, 64);
+            txtAddress.BorderColor = Color.WhiteSmoke;
+            txtAddress.BorderRadius = 6;
+            txtAddress.CustomizableEdges = customizableEdges15;
+            txtAddress.DefaultText = "";
+            txtAddress.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtAddress.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtAddress.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtAddress.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtAddress.FillColor = Color.FromArgb(47, 54, 64);
+            txtAddress.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtAddress.Font = new Font("Square721 Cn BT", 10.2F);
+            txtAddress.ForeColor = Color.White;
+            txtAddress.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtAddress.Location = new Point(95, 300);
+            txtAddress.Margin = new Padding(3, 4, 3, 4);
+            txtAddress.Name = "txtAddress";
+            txtAddress.PasswordChar = '\0';
+            txtAddress.PlaceholderText = "";
+            txtAddress.SelectedText = "";
+            txtAddress.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            txtAddress.Size = new Size(361, 32);
+            txtAddress.TabIndex = 9;
+            // 
             // Signup
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Center;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(txtAddress);
             Controls.Add(lblLogin);
             Controls.Add(label1);
             Controls.Add(btnSignup);
@@ -273,8 +304,9 @@ namespace FinalCPE142LProject.Login_Signup
             Controls.Add(txtUser);
             Controls.Add(txtLname);
             Controls.Add(txtFname);
+            DoubleBuffered = true;
             Name = "Signup";
-            Size = new Size(968, 623);
+            Size = new Size(970, 625);
             Load += Signup_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -296,5 +328,6 @@ namespace FinalCPE142LProject.Login_Signup
         private Guna.UI2.WinForms.Guna2Button btnSignup;
         private Label label1;
         private Label lblLogin;
+        private Guna.UI2.WinForms.Guna2TextBox txtAddress;
     }
 }

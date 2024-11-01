@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventory));
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             button4 = new Button();
             btnUpdate = new Button();
             btnAdd = new Button();
             label4 = new Label();
-            dgvInventory = new DataGridView();
+            dgvInventory = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
             SuspendLayout();
             // 
@@ -98,12 +102,71 @@
             // 
             // dgvInventory
             // 
-            dgvInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInventory.Location = new Point(192, 300);
+            dgvInventory.AllowUserToResizeColumns = false;
+            dgvInventory.AllowUserToResizeRows = false;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(53, 59, 72);
+            dataGridViewCellStyle5.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(220, 221, 225);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dgvInventory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dgvInventory.BackgroundColor = Color.FromArgb(47, 54, 64);
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(45, 52, 54);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(45, 52, 54);
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dgvInventory.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(53, 59, 72);
+            dataGridViewCellStyle7.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(220, 221, 225);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dgvInventory.DefaultCellStyle = dataGridViewCellStyle7;
+            dgvInventory.GridColor = Color.FromArgb(47, 54, 64);
+            dgvInventory.Location = new Point(41, 194);
             dgvInventory.Name = "dgvInventory";
+            dgvInventory.ReadOnly = true;
+            dgvInventory.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(53, 59, 72);
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(53, 59, 72);
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dgvInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dgvInventory.RowHeadersVisible = false;
             dgvInventory.RowHeadersWidth = 51;
-            dgvInventory.Size = new Size(300, 188);
-            dgvInventory.TabIndex = 11;
+            dgvInventory.Size = new Size(701, 334);
+            dgvInventory.TabIndex = 24;
+            dgvInventory.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgvInventory.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 9F);
+            dgvInventory.ThemeStyle.AlternatingRowsStyle.ForeColor = SystemColors.ControlText;
+            dgvInventory.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgvInventory.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvInventory.ThemeStyle.BackColor = Color.FromArgb(47, 54, 64);
+            dgvInventory.ThemeStyle.GridColor = Color.FromArgb(47, 54, 64);
+            dgvInventory.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(45, 52, 54);
+            dgvInventory.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvInventory.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            dgvInventory.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgvInventory.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvInventory.ThemeStyle.HeaderStyle.Height = 30;
+            dgvInventory.ThemeStyle.ReadOnly = true;
+            dgvInventory.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgvInventory.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvInventory.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            dgvInventory.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dgvInventory.ThemeStyle.RowsStyle.Height = 29;
+            dgvInventory.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgvInventory.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
             // Inventory
             // 
@@ -127,6 +190,6 @@
         private Button btnUpdate;
         private Button btnAdd;
         private Label label4;
-        private DataGridView dgvInventory;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvInventory;
     }
 }
