@@ -13,7 +13,7 @@ namespace FinalCPE142LProject
             ApplicationConfiguration.Initialize();
 
             //test run
-            Application.Run(new Main());
+            Application.Run(new Login());
         }
     }
 }

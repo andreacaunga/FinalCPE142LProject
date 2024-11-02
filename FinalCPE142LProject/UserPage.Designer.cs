@@ -1,6 +1,6 @@
 ﻿namespace FinalCPE142LProject
 {
-    partial class Main
+    partial class UserPage
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserPage));
             pnlAdminMenu = new Panel();
             btnSignout = new Button();
             btnExit = new Button();

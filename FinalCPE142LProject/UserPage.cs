@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace FinalCPE142LProject
 {
-    public partial class Main : Form
+    public partial class UserPage : Form
     {
         bool sidebarExpand;
         bool shopCollapse;
@@ -27,7 +27,7 @@ namespace FinalCPE142LProject
         GPU GPU = new GPU();
         RAM RAM = new RAM();
         MBoard mBoard = new MBoard();
-        public Main()
+        public UserPage()
         {
             InitializeComponent();
             addUserControl(home);
@@ -63,10 +63,9 @@ namespace FinalCPE142LProject
 
         private void btnSignout_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Start start = new Start();
-            start.ShowDialog();
+            Login frmLogin = new Login();
             this.Close();
+            frmLogin.ShowDialog();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

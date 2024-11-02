@@ -1,6 +1,6 @@
 ﻿namespace FinalCPE142LProject
 {
-    partial class Admin
+    partial class AdminPage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPage));
             pnlAdminMenu = new Panel();
             label1 = new Label();
             panel1 = new Panel();

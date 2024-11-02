@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace FinalCPE142LProject
 {
-    public partial class Admin : Form
+    public partial class AdminPage : Form
     {
         AdminDashboard dashboard = new AdminDashboard();
         UserAccounts accounts = new UserAccounts();
         Inventory inventory = new Inventory();
         Transactions transactions = new Transactions();
 
-        public Admin()
+        public AdminPage()
         {
             InitializeComponent();
 
@@ -56,10 +56,9 @@ namespace FinalCPE142LProject
 
         private void btnSignout_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Start start = new Start();
-            start.ShowDialog();
+            Login frmLogin = new Login();
             this.Close();
+            frmLogin.ShowDialog();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
