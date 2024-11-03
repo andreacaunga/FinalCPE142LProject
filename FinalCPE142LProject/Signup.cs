@@ -43,7 +43,7 @@ namespace FinalCPE142LProject
 
                     using (SqlCommand checkUser = new SqlCommand(checkUsername, connection))
                     {
-                        checkUser.Parameters.AddWithValue("@username", txtUser.Text.Trim());
+                        checkUser.Parameters.AddWithValue("@username", txtUser.Text);
 
                         SqlDataAdapter adapter = new SqlDataAdapter(checkUser);
                         DataTable table = new DataTable();
@@ -71,9 +71,10 @@ namespace FinalCPE142LProject
 
                                 MessageBox.Show("Account successfully created", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                Login frmLogin = new Login();
-                                frmLogin.Show();
                                 this.Hide();
+                                Login frmLogin = new Login();
+                                frmLogin.ShowDialog();
+                                this.Close();
                             }
 
                         }
@@ -92,9 +93,10 @@ namespace FinalCPE142LProject
 
         private void lblLogin_Click(object sender, EventArgs e)
         {
-            Login frmLogin = new Login();
             this.Hide();
+            Login frmLogin = new Login();
             frmLogin.ShowDialog();
+            this.Close();
             //this.Hide();
         }
 
@@ -120,6 +122,11 @@ namespace FinalCPE142LProject
             {
                 txtConPass.PasswordChar = '•';
             }
+        }
+
+        private void btnCLose_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
         }
     }
 }

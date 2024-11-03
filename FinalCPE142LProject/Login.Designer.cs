@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             lblSignup = new Label();
             label1 = new Label();
-            btnSignup = new Guna.UI2.WinForms.Guna2Button();
+            btnLogin = new Guna.UI2.WinForms.Guna2Button();
             txtPass = new Guna.UI2.WinForms.Guna2TextBox();
             txtUser = new Guna.UI2.WinForms.Guna2TextBox();
             chkboxShowPass = new CheckBox();
+            btnCLose = new Label();
             SuspendLayout();
             // 
             // lblSignup
@@ -69,32 +70,32 @@
             label1.TabIndex = 22;
             label1.Text = "Don't have an account?";
             // 
-            // btnSignup
+            // btnLogin
             // 
-            btnSignup.BackColor = Color.FromArgb(47, 54, 64);
-            btnSignup.BorderRadius = 18;
-            btnSignup.CustomizableEdges = customizableEdges1;
-            btnSignup.DisabledState.BorderColor = Color.DarkGray;
-            btnSignup.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnSignup.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnSignup.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnSignup.FillColor = Color.FromArgb(41, 45, 53);
-            btnSignup.Font = new Font("Square721 Cn BT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSignup.ForeColor = Color.White;
-            btnSignup.Location = new Point(94, 403);
-            btnSignup.Name = "btnSignup";
-            btnSignup.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnSignup.Size = new Size(100, 37);
-            btnSignup.TabIndex = 21;
-            btnSignup.Text = "LOGIN";
-            btnSignup.Click += btnSignup_Click;
+            btnLogin.BackColor = Color.FromArgb(47, 54, 64);
+            btnLogin.BorderRadius = 18;
+            btnLogin.CustomizableEdges = customizableEdges7;
+            btnLogin.DisabledState.BorderColor = Color.DarkGray;
+            btnLogin.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnLogin.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnLogin.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnLogin.FillColor = Color.FromArgb(41, 45, 53);
+            btnLogin.Font = new Font("Square721 Cn BT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(94, 403);
+            btnLogin.Name = "btnLogin";
+            btnLogin.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnLogin.Size = new Size(100, 37);
+            btnLogin.TabIndex = 21;
+            btnLogin.Text = "LOGIN";
+            btnLogin.Click += btnLogin_Click;
             // 
             // txtPass
             // 
             txtPass.BackColor = Color.FromArgb(47, 54, 64);
             txtPass.BorderColor = Color.WhiteSmoke;
             txtPass.BorderRadius = 6;
-            txtPass.CustomizableEdges = customizableEdges3;
+            txtPass.CustomizableEdges = customizableEdges9;
             txtPass.DefaultText = "";
             txtPass.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtPass.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -111,7 +112,7 @@
             txtPass.PasswordChar = '•';
             txtPass.PlaceholderText = "";
             txtPass.SelectedText = "";
-            txtPass.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtPass.ShadowDecoration.CustomizableEdges = customizableEdges10;
             txtPass.Size = new Size(243, 32);
             txtPass.TabIndex = 20;
             // 
@@ -120,7 +121,7 @@
             txtUser.BackColor = Color.FromArgb(47, 54, 64);
             txtUser.BorderColor = Color.WhiteSmoke;
             txtUser.BorderRadius = 6;
-            txtUser.CustomizableEdges = customizableEdges5;
+            txtUser.CustomizableEdges = customizableEdges11;
             txtUser.DefaultText = "";
             txtUser.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtUser.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -137,7 +138,7 @@
             txtUser.PasswordChar = '\0';
             txtUser.PlaceholderText = "";
             txtUser.SelectedText = "";
-            txtUser.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txtUser.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txtUser.Size = new Size(243, 32);
             txtUser.TabIndex = 19;
             // 
@@ -155,6 +156,18 @@
             chkboxShowPass.UseVisualStyleBackColor = false;
             chkboxShowPass.CheckedChanged += chkboxShowPass_CheckedChanged;
             // 
+            // btnCLose
+            // 
+            btnCLose.AutoSize = true;
+            btnCLose.Cursor = Cursors.Hand;
+            btnCLose.Image = (Image)resources.GetObject("btnCLose.Image");
+            btnCLose.Location = new Point(934, 20);
+            btnCLose.Name = "btnCLose";
+            btnCLose.Size = new Size(13, 20);
+            btnCLose.TabIndex = 25;
+            btnCLose.Text = " ";
+            btnCLose.Click += btnCLose_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -162,14 +175,15 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(970, 625);
+            Controls.Add(btnCLose);
             Controls.Add(chkboxShowPass);
             Controls.Add(lblSignup);
             Controls.Add(label1);
-            Controls.Add(btnSignup);
+            Controls.Add(btnLogin);
             Controls.Add(txtPass);
             Controls.Add(txtUser);
             DoubleBuffered = true;
-            FormBorderStyle = FormBorderStyle.Fixed3D;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
@@ -181,9 +195,10 @@
 
         private Label lblSignup;
         private Label label1;
-        private Guna.UI2.WinForms.Guna2Button btnSignup;
+        private Guna.UI2.WinForms.Guna2Button btnLogin;
         private Guna.UI2.WinForms.Guna2TextBox txtPass;
         private Guna.UI2.WinForms.Guna2TextBox txtUser;
         private CheckBox chkboxShowPass;
+        private Label btnCLose;
     }
 }

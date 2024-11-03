@@ -34,8 +34,8 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             textBox1 = new TextBox();
-            button2 = new Button();
-            button1 = new Button();
+            btnDeleteUser = new Button();
+            btnEdit = new Button();
             btnAddUser = new Button();
             label6 = new Label();
             dgvUser = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -54,37 +54,39 @@
             textBox1.TabIndex = 21;
             textBox1.Text = "Search...";
             // 
-            // button2
+            // btnDeleteUser
             // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(334, 159);
-            button2.Name = "button2";
-            button2.Size = new Size(128, 29);
-            button2.TabIndex = 20;
-            button2.Text = "Delete User";
-            button2.TextAlign = ContentAlignment.MiddleRight;
-            button2.UseVisualStyleBackColor = true;
+            btnDeleteUser.FlatAppearance.BorderSize = 0;
+            btnDeleteUser.FlatStyle = FlatStyle.Flat;
+            btnDeleteUser.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDeleteUser.ForeColor = SystemColors.ControlLightLight;
+            btnDeleteUser.Image = (Image)resources.GetObject("btnDeleteUser.Image");
+            btnDeleteUser.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDeleteUser.Location = new Point(334, 159);
+            btnDeleteUser.Name = "btnDeleteUser";
+            btnDeleteUser.Size = new Size(128, 29);
+            btnDeleteUser.TabIndex = 20;
+            btnDeleteUser.Text = "Delete User";
+            btnDeleteUser.TextAlign = ContentAlignment.MiddleRight;
+            btnDeleteUser.UseVisualStyleBackColor = true;
+            btnDeleteUser.Click += btnDeleteUser_Click;
             // 
-            // button1
+            // btnEdit
             // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(201, 159);
-            button1.Name = "button1";
-            button1.Size = new Size(84, 29);
-            button1.TabIndex = 19;
-            button1.Text = "Edit";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.UseVisualStyleBackColor = true;
+            btnEdit.FlatAppearance.BorderSize = 0;
+            btnEdit.FlatStyle = FlatStyle.Flat;
+            btnEdit.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEdit.ForeColor = SystemColors.ControlLightLight;
+            btnEdit.Image = (Image)resources.GetObject("btnEdit.Image");
+            btnEdit.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEdit.Location = new Point(201, 159);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(84, 29);
+            btnEdit.TabIndex = 19;
+            btnEdit.Text = "Edit";
+            btnEdit.TextAlign = ContentAlignment.MiddleRight;
+            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnAddUser
             // 
@@ -101,6 +103,7 @@
             btnAddUser.Text = "Add User";
             btnAddUser.TextAlign = ContentAlignment.MiddleRight;
             btnAddUser.UseVisualStyleBackColor = true;
+            btnAddUser.Click += btnAddUser_Click;
             // 
             // label6
             // 
@@ -115,63 +118,64 @@
             // 
             // dgvUser
             // 
-            dgvUser.AllowUserToResizeColumns = false;
             dgvUser.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(53, 59, 72);
-            dataGridViewCellStyle1.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(47, 54, 64);
+            dataGridViewCellStyle1.Font = new Font("Square721 Cn BT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(220, 221, 225);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(223, 228, 234);
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dgvUser.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvUser.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dgvUser.BackgroundColor = Color.FromArgb(47, 54, 64);
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(45, 52, 54);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(30, 39, 46);
+            dataGridViewCellStyle2.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(45, 52, 54);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(30, 39, 46);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvUser.ColumnHeadersHeight = 30;
+            dgvUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(53, 59, 72);
-            dataGridViewCellStyle3.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(47, 54, 64);
+            dataGridViewCellStyle3.Font = new Font("Square721 Cn BT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(220, 221, 225);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(223, 228, 234);
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvUser.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvUser.GridColor = Color.FromArgb(47, 54, 64);
-            dgvUser.Location = new Point(40, 205);
+            dgvUser.GridColor = Color.FromArgb(231, 229, 255);
+            dgvUser.Location = new Point(47, 203);
             dgvUser.Name = "dgvUser";
+            dgvUser.ReadOnly = true;
             dgvUser.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(53, 59, 72);
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(47, 54, 64);
             dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
             dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(53, 59, 72);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(47, 54, 64);
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
             dgvUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvUser.RowHeadersVisible = false;
             dgvUser.RowHeadersWidth = 51;
-            dgvUser.Size = new Size(701, 334);
+            dgvUser.Size = new Size(687, 370);
             dgvUser.TabIndex = 23;
             dgvUser.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            dgvUser.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 9F);
-            dgvUser.ThemeStyle.AlternatingRowsStyle.ForeColor = SystemColors.ControlText;
-            dgvUser.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dgvUser.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvUser.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvUser.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgvUser.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgvUser.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
             dgvUser.ThemeStyle.BackColor = Color.FromArgb(47, 54, 64);
-            dgvUser.ThemeStyle.GridColor = Color.FromArgb(47, 54, 64);
-            dgvUser.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(45, 52, 54);
+            dgvUser.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgvUser.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
             dgvUser.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvUser.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgvUser.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            dgvUser.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvUser.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvUser.ThemeStyle.HeaderStyle.Height = 30;
-            dgvUser.ThemeStyle.ReadOnly = false;
+            dgvUser.ThemeStyle.ReadOnly = true;
             dgvUser.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvUser.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvUser.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -187,8 +191,8 @@
             BackColor = Color.FromArgb(47, 54, 64);
             Controls.Add(dgvUser);
             Controls.Add(textBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnDeleteUser);
+            Controls.Add(btnEdit);
             Controls.Add(btnAddUser);
             Controls.Add(label6);
             Name = "UserAccounts";
@@ -200,8 +204,8 @@
 
         #endregion
         private TextBox textBox1;
-        private Button button2;
-        private Button button1;
+        private Button btnDeleteUser;
+        private Button btnEdit;
         private Button btnAddUser;
         private Label label6;
         private Guna.UI2.WinForms.Guna2DataGridView dgvUser;

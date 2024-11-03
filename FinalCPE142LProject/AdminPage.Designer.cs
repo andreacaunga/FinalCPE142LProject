@@ -211,7 +211,7 @@
             guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             guna2ContextMenuStrip1.Size = new Size(61, 4);
             // 
-            // Admin
+            // AdminPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -219,9 +219,9 @@
             ClientSize = new Size(970, 625);
             Controls.Add(pnlContainerAdmin);
             Controls.Add(pnlAdminMenu);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
+            FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
-            Name = "Admin";
+            Name = "AdminPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin";
             pnlAdminMenu.ResumeLayout(false);

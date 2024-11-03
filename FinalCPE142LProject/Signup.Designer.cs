@@ -57,6 +57,7 @@
             txtFname = new Guna.UI2.WinForms.Guna2TextBox();
             chkboxShowConPass = new CheckBox();
             chkboxShowPass = new CheckBox();
+            btnCLose = new Label();
             SuspendLayout();
             // 
             // txtAddress
@@ -315,6 +316,18 @@
             chkboxShowPass.UseVisualStyleBackColor = false;
             chkboxShowPass.CheckedChanged += chkboxShowPass_CheckedChanged;
             // 
+            // btnCLose
+            // 
+            btnCLose.AutoSize = true;
+            btnCLose.Cursor = Cursors.Hand;
+            btnCLose.Image = (Image)resources.GetObject("btnCLose.Image");
+            btnCLose.Location = new Point(935, 18);
+            btnCLose.Name = "btnCLose";
+            btnCLose.Size = new Size(13, 20);
+            btnCLose.TabIndex = 22;
+            btnCLose.Text = " ";
+            btnCLose.Click += btnCLose_Click;
+            // 
             // Signup
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -322,6 +335,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(970, 625);
+            Controls.Add(btnCLose);
             Controls.Add(chkboxShowPass);
             Controls.Add(chkboxShowConPass);
             Controls.Add(txtAddress);
@@ -335,7 +349,7 @@
             Controls.Add(txtLname);
             Controls.Add(txtFname);
             DoubleBuffered = true;
-            FormBorderStyle = FormBorderStyle.Fixed3D;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Signup";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Signup";
@@ -357,5 +371,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtFname;
         private CheckBox chkboxShowConPass;
         private CheckBox chkboxShowPass;
+        private Label btnCLose;
     }
 }

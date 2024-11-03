@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using FinalCPE142LProject.UserAccountNamespace;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace FinalCPE142LProject
     public partial class Login : Form
     {
         SqlConnection connection = new SqlConnection(@"Data Source=ASUS\SQLEXPRESS;Initial Catalog=dboExample;User ID=sa;Password=123;Encrypt=True;Trust Server Certificate=True");
+        //AdminRole admin;
         public Login()
         {
             InitializeComponent();
@@ -39,23 +41,48 @@ namespace FinalCPE142LProject
             }
         }
 
-        private void btnSignup_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
+
             if (String.IsNullOrEmpty(txtUser.Text) || String.IsNullOrEmpty(txtPass.Text))
             {
                 MessageBox.Show("All fields are required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
             else
             {
                 if (connection.State != ConnectionState.Open)
                 {
+                    connection.Open();
+
                     try
                     {
-                        connection.Open();
+                        string selectData = "SELECT * FROM tblAccounts WHERE username = @username AND password = @pass";
+                        using (SqlCommand cmd = new SqlCommand(selectData, connection))
+                        {
+                            cmd.Parameters.AddWithValue("@username", txtUser.Text);
+                            cmd.Parameters.AddWithValue("@pass", txtPass.Text);
+
+                            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                            DataTable dataTable = new DataTable();
+                            adapter.Fill(dataTable);
+
+                            if (dataTable.Rows.Count >= 1)
+                            {
+                                this.Hide();
+                                UserPage frmUser = new UserPage();
+                                frmUser.ShowDialog();
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Incorrect username or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Connection Error: " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Connection Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {
@@ -63,6 +90,11 @@ namespace FinalCPE142LProject
                     }
                 }
             }
+        }
+
+        private void btnCLose_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
         }
     }
 }
