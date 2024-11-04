@@ -56,9 +56,10 @@ namespace FinalCPE142LProject
 
         private void btnSignout_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Login frmLogin = new Login();
-            this.Close();
             frmLogin.ShowDialog();
+            this.Close();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

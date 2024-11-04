@@ -1,13 +1,5 @@
 ﻿using FinalCPE142LProject.Repositories;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace FinalCPE142LProject.AdminUserControl
 {
@@ -96,6 +88,72 @@ namespace FinalCPE142LProject.AdminUserControl
             userRepo.deleteUser(userID);
 
             ReadUsers();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dataTable = new DataTable();
+
+            dataTable.Columns.Add("User ID");
+            dataTable.Columns.Add("First name");
+            dataTable.Columns.Add("Last name");
+            dataTable.Columns.Add("Username");
+            dataTable.Columns.Add("Address");
+            dataTable.Columns.Add("Phone number");
+            dataTable.Columns.Add("Password");
+
+            string id = txtSearch.Text;
+
+            if (id == null || id.Length == 0) return;
+
+            int userID = Convert.ToInt32(id);
+
+            var userRepo = new UserRepository();
+            var users = userRepo.ReadUserbyID(userID);
+
+            if (users == null)
+            {
+                ReadUsers();
+                return;
+            }
+
+            foreach (var user in users)
+            {
+                var row = dataTable.NewRow();
+
+                row["User ID"] = user.userID;
+                row["First name"] = user.fName;
+                row["Last name"] = user.lName;
+                row["Username"] = user.username;
+                row["Address"] = user.address;
+                row["Phone number"] = user.phone;
+                row["Password"] = user.pass;
+
+                dataTable.Rows.Add(row);
+            }
+            this.dgvUser.DataSource = dataTable;
+        }
+
+        private void txtSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Enabled)
+            {
+                txtSearch.Clear();
+            }
+
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            //if (string.IsNullOrWhiteSpace(txtSearch.Text))
+            //{
+            //    txtSearch.Text = "Search by ID...";
+            //}
+            //if (string.IsNullOrWhiteSpace(txtSearch.Text))
+            //{
+            //    txtSearch.Text = "Search by ID...";
+            //    txtSearch.ForeColor = SystemColors.GrayText; // Set text color to indicate placeholder
+            //}
         }
     }
 }

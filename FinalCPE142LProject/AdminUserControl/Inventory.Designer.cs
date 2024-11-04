@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventory));
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            button4 = new Button();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            btnRemove = new Button();
             btnUpdate = new Button();
             btnAdd = new Button();
             label4 = new Label();
@@ -41,21 +41,22 @@
             ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
             SuspendLayout();
             // 
-            // button4
+            // btnRemove
             // 
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.ForeColor = SystemColors.ControlLightLight;
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(378, 150);
-            button4.Name = "button4";
-            button4.Size = new Size(103, 29);
-            button4.TabIndex = 10;
-            button4.Text = "Remove";
-            button4.TextAlign = ContentAlignment.MiddleRight;
-            button4.UseVisualStyleBackColor = true;
+            btnRemove.FlatAppearance.BorderSize = 0;
+            btnRemove.FlatStyle = FlatStyle.Flat;
+            btnRemove.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRemove.ForeColor = SystemColors.ControlLightLight;
+            btnRemove.Image = (Image)resources.GetObject("btnRemove.Image");
+            btnRemove.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRemove.Location = new Point(378, 150);
+            btnRemove.Name = "btnRemove";
+            btnRemove.Size = new Size(103, 29);
+            btnRemove.TabIndex = 10;
+            btnRemove.Text = "Remove";
+            btnRemove.TextAlign = ContentAlignment.MiddleRight;
+            btnRemove.UseVisualStyleBackColor = true;
+            btnRemove.Click += btnRemove_Click;
             // 
             // btnUpdate
             // 
@@ -72,6 +73,7 @@
             btnUpdate.Text = "Update";
             btnUpdate.TextAlign = ContentAlignment.MiddleRight;
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnAdd
             // 
@@ -88,6 +90,7 @@
             btnAdd.Text = "Add Product";
             btnAdd.TextAlign = ContentAlignment.MiddleRight;
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // label4
             // 
@@ -102,62 +105,62 @@
             // 
             // dgvInventory
             // 
-            dgvInventory.AllowUserToResizeColumns = false;
             dgvInventory.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(53, 59, 72);
-            dataGridViewCellStyle5.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(220, 221, 225);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(47, 54, 64);
+            dataGridViewCellStyle1.Font = new Font("Square721 Cn BT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(223, 228, 234);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvInventory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dgvInventory.BackgroundColor = Color.FromArgb(47, 54, 64);
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(45, 52, 54);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(45, 52, 54);
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(30, 39, 46);
+            dataGridViewCellStyle2.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(30, 39, 46);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvInventory.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(53, 59, 72);
-            dataGridViewCellStyle7.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(220, 221, 225);
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dgvInventory.DefaultCellStyle = dataGridViewCellStyle7;
-            dgvInventory.GridColor = Color.FromArgb(47, 54, 64);
-            dgvInventory.Location = new Point(41, 194);
+            dgvInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(47, 54, 64);
+            dataGridViewCellStyle3.Font = new Font("Square721 Cn BT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(223, 228, 234);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvInventory.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvInventory.GridColor = Color.FromArgb(231, 229, 255);
+            dgvInventory.Location = new Point(47, 194);
             dgvInventory.Name = "dgvInventory";
             dgvInventory.ReadOnly = true;
             dgvInventory.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(53, 59, 72);
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(53, 59, 72);
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dgvInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(47, 54, 64);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(47, 54, 64);
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvInventory.RowHeadersVisible = false;
             dgvInventory.RowHeadersWidth = 51;
-            dgvInventory.Size = new Size(701, 334);
+            dgvInventory.Size = new Size(687, 370);
             dgvInventory.TabIndex = 24;
             dgvInventory.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            dgvInventory.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 9F);
-            dgvInventory.ThemeStyle.AlternatingRowsStyle.ForeColor = SystemColors.ControlText;
-            dgvInventory.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dgvInventory.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvInventory.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvInventory.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgvInventory.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgvInventory.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
             dgvInventory.ThemeStyle.BackColor = Color.FromArgb(47, 54, 64);
-            dgvInventory.ThemeStyle.GridColor = Color.FromArgb(47, 54, 64);
-            dgvInventory.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(45, 52, 54);
+            dgvInventory.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgvInventory.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
             dgvInventory.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvInventory.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgvInventory.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            dgvInventory.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvInventory.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvInventory.ThemeStyle.HeaderStyle.Height = 30;
             dgvInventory.ThemeStyle.ReadOnly = true;
             dgvInventory.ThemeStyle.RowsStyle.BackColor = Color.White;
@@ -174,7 +177,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 54, 64);
             Controls.Add(dgvInventory);
-            Controls.Add(button4);
+            Controls.Add(btnRemove);
             Controls.Add(btnUpdate);
             Controls.Add(btnAdd);
             Controls.Add(label4);
@@ -186,7 +189,7 @@
         }
 
         #endregion
-        private Button button4;
+        private Button btnRemove;
         private Button btnUpdate;
         private Button btnAdd;
         private Label label4;

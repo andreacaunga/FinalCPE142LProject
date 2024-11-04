@@ -32,6 +32,7 @@ namespace FinalCPE142LProject.Repositories
                             while (reader.Read())
                             {
                                 User user = new User();
+
                                 user.userID = reader.GetInt32(0);
                                 user.fName = reader.GetString(1);
                                 user.lName = reader.GetString(2);
@@ -83,6 +84,48 @@ namespace FinalCPE142LProject.Repositories
                             }
                         }
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
+
+        public List<User>? ReadUserbyID(int userID)
+        {
+            var users = new List<User>();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT * FROM tblAccounts WHERE user_id LIKE @userID";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userID", "%" + userID + "%");
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                User user = new User();
+                                user.userID = reader.GetInt32(0);
+                                user.fName = reader.GetString(1);
+                                user.lName = reader.GetString(2);
+                                user.username = reader.GetString(3);
+                                user.address = reader.GetString(4);
+                                user.phone = reader.GetString(5);
+                                user.pass = reader.GetString(6);
+
+                                users.Add(user);
+                            }
+                        }
+                    }
+                    return users;
                 }
             }
             catch (Exception ex)

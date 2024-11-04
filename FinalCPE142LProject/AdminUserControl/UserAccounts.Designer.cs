@@ -29,30 +29,35 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAccounts));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            textBox1 = new TextBox();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            txtSearch = new TextBox();
             btnDeleteUser = new Button();
             btnEdit = new Button();
             btnAddUser = new Button();
             label6 = new Label();
             dgvUser = new Guna.UI2.WinForms.Guna2DataGridView();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvUser).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // txtSearch
             // 
-            textBox1.BackColor = Color.FromArgb(47, 54, 64);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = SystemColors.ControlLightLight;
-            textBox1.Location = new Point(528, 163);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(154, 21);
-            textBox1.TabIndex = 21;
-            textBox1.Text = "Search...";
+            txtSearch.BackColor = Color.FromArgb(47, 54, 64);
+            txtSearch.BorderStyle = BorderStyle.None;
+            txtSearch.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSearch.ForeColor = SystemColors.ControlLightLight;
+            txtSearch.Location = new Point(557, 163);
+            txtSearch.MaxLength = 11;
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(154, 21);
+            txtSearch.TabIndex = 21;
+            txtSearch.Text = "Search by ID...";
+            txtSearch.Click += txtSearch_Click;
+            txtSearch.TextChanged += txtSearch_TextChanged;
+            txtSearch.Leave += txtSearch_Leave;
             // 
             // btnDeleteUser
             // 
@@ -119,45 +124,45 @@
             // dgvUser
             // 
             dgvUser.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(47, 54, 64);
-            dataGridViewCellStyle1.Font = new Font("Square721 Cn BT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(223, 228, 234);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dgvUser.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(47, 54, 64);
+            dataGridViewCellStyle5.Font = new Font("Square721 Cn BT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(223, 228, 234);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvUser.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvUser.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dgvUser.BackgroundColor = Color.FromArgb(47, 54, 64);
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(30, 39, 46);
-            dataGridViewCellStyle2.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(30, 39, 46);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(30, 39, 46);
+            dataGridViewCellStyle6.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(30, 39, 46);
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dgvUser.ColumnHeadersHeight = 30;
             dgvUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(47, 54, 64);
-            dataGridViewCellStyle3.Font = new Font("Square721 Cn BT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(223, 228, 234);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvUser.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(47, 54, 64);
+            dataGridViewCellStyle7.Font = new Font("Square721 Cn BT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(223, 228, 234);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dgvUser.DefaultCellStyle = dataGridViewCellStyle7;
             dgvUser.GridColor = Color.FromArgb(231, 229, 255);
             dgvUser.Location = new Point(47, 203);
             dgvUser.Name = "dgvUser";
             dgvUser.ReadOnly = true;
             dgvUser.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(47, 54, 64);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(47, 54, 64);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(47, 54, 64);
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(47, 54, 64);
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dgvUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dgvUser.RowHeadersVisible = false;
             dgvUser.RowHeadersWidth = 51;
             dgvUser.Size = new Size(687, 370);
@@ -184,13 +189,23 @@
             dgvUser.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvUser.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
+            // panel1
+            // 
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackgroundImageLayout = ImageLayout.Center;
+            panel1.Location = new Point(515, 153);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(40, 40);
+            panel1.TabIndex = 24;
+            // 
             // UserAccounts
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 54, 64);
+            Controls.Add(panel1);
             Controls.Add(dgvUser);
-            Controls.Add(textBox1);
+            Controls.Add(txtSearch);
             Controls.Add(btnDeleteUser);
             Controls.Add(btnEdit);
             Controls.Add(btnAddUser);
@@ -203,11 +218,12 @@
         }
 
         #endregion
-        private TextBox textBox1;
+        private TextBox txtSearch;
         private Button btnDeleteUser;
         private Button btnEdit;
         private Button btnAddUser;
         private Label label6;
         private Guna.UI2.WinForms.Guna2DataGridView dgvUser;
+        private Panel panel1;
     }
 }
