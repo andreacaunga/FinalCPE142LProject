@@ -222,37 +222,5 @@ namespace FinalCPE142LProject.Repositories
                 Console.WriteLine(ex.Message);
             }
         }
-
-        public bool validateUser(string username, string pass)
-        {
-            bool isValid = false;
-
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-
-                    string query = "SELECT COUNT(1) FROM tblAccounts WHERE username = @username AND password = @pass";
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@username", username);
-                        command.Parameters.AddWithValue("@pass", pass);
-
-                        // Execute the query and check if any record exists
-                        int count = (int)command.ExecuteScalar();
-                        isValid = count > 0;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return isValid;
-        }
-
     }
 }

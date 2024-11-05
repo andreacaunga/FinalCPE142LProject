@@ -26,13 +26,6 @@ namespace FinalCPE142LProject
                 String.IsNullOrEmpty(txtAddress.Text) || String.IsNullOrEmpty(txtPhone.Text) || String.IsNullOrEmpty(txtConPass.Text))
             {
                 MessageBox.Show("All fields are required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (txtUser.Text == "admin" || txtPass.Text == "admin123")
-            {
-                MessageBox.Show("Invalid username or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
             }
 
             if (txtPass.Text.Trim() != txtConPass.Text.Trim())

@@ -30,15 +30,15 @@ namespace FinalCPE142LProject
         {
             private string firstName;
             private string lastName;
-            protected string username;
-            protected string pass;
+            protected string userName;
+            protected string password;
 
-            public UserAccount(string firstName, string lastName, string username, string pass)
+            public UserAccount(string firstName, string lastName, string userName, string password)
             {
                 this.firstName = firstName;
                 this.lastName = lastName;
-                this.username = username;
-                this.pass = pass;
+                this.userName = userName;
+                this.password = password;
             }
             public abstract bool validateLogin(string userName, string password);
 
@@ -55,20 +55,17 @@ namespace FinalCPE142LProject
         class AdminRole : UserAccount
         {
             private string role;
-            public AdminRole(string firstName, string lastName, string role, string username, string pass) : base(firstName, lastName, username, pass)
+            public AdminRole(string firstName, string lastName, string role, string userName, string password) : base(firstName, lastName, userName, password)
             {
                 this.role = role;
             }
-            public override bool validateLogin(string username, string pass)
+            public override bool validateLogin(string userName, string password)
             {
-                if (username == "admin" && pass == "admin123")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return this.userName == "admin" && this.password =="admin123";
+            }
+            public string getRole()
+            {
+                return role;
             }
         }
     }

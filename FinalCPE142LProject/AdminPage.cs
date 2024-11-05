@@ -13,8 +13,6 @@ namespace FinalCPE142LProject
 {
     public partial class AdminPage : Form
     {
-        bool adminMenuExpand;
-
         AdminDashboard dashboard = new AdminDashboard();
         UserAccounts accounts = new UserAccounts();
         Inventory inventory = new Inventory();
@@ -69,31 +67,6 @@ namespace FinalCPE142LProject
             System.Environment.Exit(0);
         }
 
-        private void menuTimer_Tick(object sender, EventArgs e)
-        {
-            if (adminMenuExpand)
-            {
-                pnlAdminMenu.Width -= 10;
-                if (pnlAdminMenu.Width == pnlAdminMenu.MinimumSize.Width)
-                {
-                    adminMenuExpand = false;
-                    menuTimer.Stop();
-                }
-            }
-            else
-            {
-                pnlAdminMenu.Width += 10;
-                if (pnlAdminMenu.Width == pnlAdminMenu.MaximumSize.Width)
-                {
-                    adminMenuExpand = true;
-                    menuTimer.Stop();
-                }
-            }
-        }
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            menuTimer.Start();
-        }
+       
     }
 }
