@@ -1,4 +1,5 @@
-﻿using FinalCPE142LProject.UserAccountNamespace;
+﻿using FinalCPE142LProject.Repositories;
+using FinalCPE142LProject.UserAccountNamespace;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,9 @@ namespace FinalCPE142LProject
 {
     public partial class Login : Form
     {
-        SqlConnection connection = new SqlConnection(@"Data Source=ASUS\SQLEXPRESS;Initial Catalog=dboExample;User ID=sa;Password=123;Encrypt=True;Trust Server Certificate=True");
-        //AdminRole admin;
+        // CHANGE CONNECTION STRING
+        SqlConnection connection = new SqlConnection(@"Data Source=ASUS\SQLEXPRESS;Initial Catalog=dboProject;Persist Security Info=True;User ID=sa;Password=123;Trust Server Certificate=True");
+        AdminRole admin;
         public Login()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace FinalCPE142LProject
             Signup frmSignup = new Signup();
             this.Hide();
             frmSignup.ShowDialog();
+            //this.Close();
             //this.Hide();
         }
 
@@ -43,52 +46,38 @@ namespace FinalCPE142LProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            string username = txtUser.Text.Trim();
+            string pass = txtPass.Text.Trim();
 
-            if (String.IsNullOrEmpty(txtUser.Text) || String.IsNullOrEmpty(txtPass.Text))
+            admin = new AdminRole("Andrea", "Caunga", "admin", username, pass);
+            // Input validation for empty fields
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(pass))
             {
                 MessageBox.Show("All fields are required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
+            // Validate user credentials
+            var userRepo = new UserRepository();
+            bool isValidUser = userRepo.validateUser(username, pass);
+
+            if (admin.validateLogin(username, pass))
+            {
+                this.Hide();
+                AdminPage frmAdmin = new AdminPage();
+                frmAdmin.ShowDialog();
+                this.Close();
+            }
+            else if (isValidUser)
+            {
+                this.Hide();
+                UserPage frmUser = new UserPage();
+                frmUser.ShowDialog();
+                this.Close();
+            }
             else
             {
-                if (connection.State != ConnectionState.Open)
-                {
-                    connection.Open();
-
-                    try
-                    {
-                        string selectData = "SELECT * FROM tblAccounts WHERE username = @username AND password = @pass";
-                        using (SqlCommand cmd = new SqlCommand(selectData, connection))
-                        {
-                            cmd.Parameters.AddWithValue("@username", txtUser.Text);
-                            cmd.Parameters.AddWithValue("@pass", txtPass.Text);
-
-                            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                            DataTable dataTable = new DataTable();
-                            adapter.Fill(dataTable);
-
-                            if (dataTable.Rows.Count >= 1)
-                            {
-                                this.Hide();
-                                UserPage frmUser = new UserPage();
-                                frmUser.ShowDialog();
-                                this.Close();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Incorrect username or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Connection Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        connection.Close();
-                    }
-                }
+                MessageBox.Show("Invalid username or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

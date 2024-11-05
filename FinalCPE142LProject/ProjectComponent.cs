@@ -30,17 +30,17 @@ namespace FinalCPE142LProject
         {
             private string firstName;
             private string lastName;
-            protected string userName;
+            protected string username;
             protected string password;
 
-            public UserAccount(string firstName, string lastName, string userName, string password)
+            public UserAccount(string firstName, string lastName, string username, string password)
             {
                 this.firstName = firstName;
                 this.lastName = lastName;
-                this.userName = userName;
+                this.username = username;
                 this.password = password;
             }
-            public abstract bool validateLogin(string userName, string password);
+            public abstract bool validateLogin(string username, string password);
 
             public string getFirstName()
             {
@@ -55,17 +55,20 @@ namespace FinalCPE142LProject
         class AdminRole : UserAccount
         {
             private string role;
-            public AdminRole(string firstName, string lastName, string role, string userName, string password) : base(firstName, lastName, userName, password)
+            public AdminRole(string firstName, string lastName, string role, string username, string password) : base(firstName, lastName, username, password)
             {
                 this.role = role;
             }
-            public override bool validateLogin(string userName, string password)
+            public override bool validateLogin(string username, string password)
             {
-                return this.userName == "admin" && this.password =="admin123";
-            }
-            public string getRole()
-            {
-                return role;
+                if (username == "admin" && password == "admin123")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
     }

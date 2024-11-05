@@ -202,7 +202,7 @@ namespace FinalCPE142LProject
             cmbxCategory.CustomizableEdges = customizableEdges7;
             cmbxCategory.DrawMode = DrawMode.OwnerDrawFixed;
             cmbxCategory.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbxCategory.FillColor = Color.FromArgb(53, 59, 72);
+            cmbxCategory.FillColor = Color.FromArgb(47, 54, 64);
             cmbxCategory.FocusedColor = Color.FromArgb(94, 148, 255);
             cmbxCategory.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             cmbxCategory.Font = new Font("Square721 Cn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);

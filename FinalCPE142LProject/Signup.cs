@@ -14,7 +14,7 @@ namespace FinalCPE142LProject
 {
     public partial class Signup : Form
     {
-        SqlConnection connection = new SqlConnection(@"Data Source=ASUS\SQLEXPRESS;Initial Catalog=dboExample;User ID=sa;Password=123;Encrypt=True;Trust Server Certificate=True");
+        SqlConnection connection = new SqlConnection(@"Data Source=ASUS\SQLEXPRESS;Initial Catalog=dboProject;Persist Security Info=True;User ID=sa;Password=123;Trust Server Certificate=True");
         public Signup()
         {
             InitializeComponent();
@@ -26,6 +26,12 @@ namespace FinalCPE142LProject
                 String.IsNullOrEmpty(txtAddress.Text) || String.IsNullOrEmpty(txtPhone.Text) || String.IsNullOrEmpty(txtConPass.Text))
             {
                 MessageBox.Show("All fields are required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (txtUser.Text == "admin" && txtPass.Text == "admin123")
+            {
+                MessageBox.Show("Invalid. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             if (txtPass.Text.Trim() != txtConPass.Text.Trim())
